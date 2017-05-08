@@ -1,0 +1,11 @@
+*.rbc
+*.sassc
+.sass-cache
+/.bundle
+/vendor/bundle
+/log/*
+/tmp/*
+/public/system/*
+/coverage/
+/public/uploads/*
+/public/assets/*
