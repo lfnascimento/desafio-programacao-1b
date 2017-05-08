@@ -1,5 +1,5 @@
 <h1><%= t "views.purchase_orders.index.title" %></h1>
-<%= link_to t('views.purchase_orders.links.new'), new_purchase_order_path %>
+<%= button_to t('views.purchase_orders.links.new'), new_purchase_order_path, method: 'get' %>
 <table>
   <thead>
     <tr>

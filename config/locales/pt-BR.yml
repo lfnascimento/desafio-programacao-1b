@@ -229,6 +229,7 @@ pt-BR:
         buttons:
           import_file: Importar
       links:
+        index: Importações
         new: Criar/Importar
         show: Visualizar Detalhes
   purchase_orders:
