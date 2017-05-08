@@ -15,9 +15,9 @@ class PurchaseOrdersController < ApplicationController
   def create
     @purchase_order = PurchaseOrder.new(purchase_order_params)
     if @purchase_order.save
-      redirect_to @purchase_order, notice: "I18n.t('')"
+      redirect_to @purchase_order, notice: t('.messages.success')
     else
-      flash[:error] = "I18n.t('')"
+      flash[:error] = t('.messages.fail')
       render 'new'
     end
   end

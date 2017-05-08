@@ -1,5 +1,5 @@
-<h1><%= t '.title' %></h1>
-<%= link_to t('.new', defaul: t("helpers.links.new")), new_purchase_order_path %>
+<h1><%= t "views.purchase_orders.index.title" %></h1>
+<%= link_to t('views.purchase_orders.links.new'), new_purchase_order_path %>
 <table>
   <thead>
     <tr>
@@ -13,7 +13,7 @@
       <td><%= purchase_order.id  %></td>
       <td><%= purchase_order.gross_revenue.to_s %></td>
       <td><%= l purchase_order.created_at,  format: :short   %></td>
-      <td><%= link_to "I18n.t('')", purchase_order %></td>
+      <td><%= link_to t("views.purchase_orders.links.show"), purchase_order %></td>
     </tr>
   <% end %>
 </table>
