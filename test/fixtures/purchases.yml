@@ -1,0 +1,16 @@
+one:
+  buyer_name: Natalia M B
+  unit_cost: 9.99
+  item_description: Bolo de Chocolate
+  count: 5
+  supplier_name: CakeSpace
+  supplier_address: Rua Sem Saida, 345 - Botafogo
+  purchase_order: one
+two:
+  buyer_name: Joao B N
+  unit_cost: 50.00
+  item_description: Lego Game
+  count: 1
+  supplier_name: Brinklandia
+  supplier_address: Rua Quadra sem Esquina, 345 - Gloria
+  purchase_order: one
