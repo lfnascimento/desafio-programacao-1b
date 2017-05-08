@@ -29,7 +29,7 @@ class PurchaseOrdersControllerTest < ActionController::TestCase
       post :create, purchase_order: { incoming_txt_file: fixture_file_upload('files/dados_invalidos.txt')  }
     end
     assert_template 'new'
-    assert_equal "Não foi possível importar o arquivo", flash[:error]
+    assert_equal "Não foi possível importar o arquivo", flash.now[:error]
   end
 
 end

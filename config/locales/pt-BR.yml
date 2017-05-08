@@ -221,6 +221,8 @@ pt-BR:
         supplier_name: Fornecedor
         supplier_address: Endereço do Fornecedor
   views:
+    application:
+      title: Nebula
     purchase_orders:
       index:
         title: Ordens de Compra Importadas

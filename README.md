@@ -17,7 +17,7 @@ If everything goes OK, let's run the project!
 
 ## Running the project
 
-1. ```$ rails server - Opens the server```
+1. ```$ bundle exec rails server - Opens the server```
 2. open http://localhost:3000
 
 ## Running tests and checking coverage

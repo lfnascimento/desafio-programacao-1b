@@ -17,7 +17,7 @@ class PurchaseOrdersController < ApplicationController
     if @purchase_order.save
       redirect_to @purchase_order, notice: t('.messages.success')
     else
-      flash[:error] = t('.messages.fail')
+      flash.now[:error] = t('.messages.fail')
       render 'new'
     end
   end
