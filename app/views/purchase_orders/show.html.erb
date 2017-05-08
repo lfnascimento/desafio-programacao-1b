@@ -1,0 +1,31 @@
+<h2><%= PurchaseOrder.model_name.human %> <%= @purchase_order.id %></h2>
+<dl>
+  <dt>
+    <%= PurchaseOrder.human_attribute_name(:gross_revenue) %>
+  </dt>
+  <dd>
+    <%= @purchase_order.gross_revenue.to_f %>
+  </dd>
+  <dt>
+    <%= PurchaseOrder.human_attribute_name(:created_at) %>
+  </dt>
+  <dd>
+    <%= l @purchase_order.created_at, format: :short %>
+  </dd>
+</dl>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= Purchase.human_attribute_name(:buyer_name) %></th>
+      <th><%= Purchase.human_attribute_name(:item_description) %></th>
+      <th><%= Purchase.human_attribute_name(:unit_cost) %></th>
+      <th><%= Purchase.human_attribute_name(:count) %></th>
+      <th><%= Purchase.human_attribute_name(:supplier_name) %></th>
+      <th><%= Purchase.human_attribute_name(:supplier_address) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: 'purchase', collection: @purchase_order.purchases %>
+  </tbody>
+</table>

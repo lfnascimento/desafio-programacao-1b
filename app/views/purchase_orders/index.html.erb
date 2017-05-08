@@ -1,0 +1,20 @@
+<h1><%= t '.title' %></h1>
+<%= link_to t('.new', defaul: t("helpers.links.new")), new_purchase_order_path %>
+<table>
+  <thead>
+    <tr>
+      <th><%= PurchaseOrder.human_attribute_name(:id) %></th>
+      <th><%= PurchaseOrder.human_attribute_name(:gross_revenue) %></th>
+      <th><%= PurchaseOrder.human_attribute_name(:created_at) %></th>
+    </tr>
+  </thead>
+  <% @purchase_orders.each do |purchase_order| %>
+    <tr>
+      <td><%= purchase_order.id  %></td>
+      <td><%= purchase_order.gross_revenue.to_s %></td>
+      <td><%= l purchase_order.created_at,  format: :short   %></td>
+      <td><%= link_to "I18n.t('')", purchase_order %></td>
+    </tr>
+  <% end %>
+</table>
+
