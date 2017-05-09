@@ -2,6 +2,7 @@ class PurchaseOrder < ActiveRecord::Base
   has_many :purchases, dependent: :destroy
   validates :purchases, presence: true
   validates_associated :purchases
+  include Parsable
 
   def incoming_txt_file=(uploaded_io)
     purchases_normalized_data = parser_txt(uploaded_io, txt_header_attributes)
@@ -19,9 +20,4 @@ class PurchaseOrder < ActiveRecord::Base
     (Purchase.attribute_names - exception_attributes).map(&:to_sym)
   end
 
-  def parser_txt(uploaded_io, header_attributes)
-    File.readlines(uploaded_io.path).drop(1).map do |line|
-      header_attributes.zip(line.chomp.split("\t")).to_h
-    end
-  end
 end
