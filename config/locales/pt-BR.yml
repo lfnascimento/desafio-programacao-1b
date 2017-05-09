@@ -212,7 +212,7 @@ pt-BR:
       purchase_order:
         id: Número de Identificação
         gross_revenue: Receita Bruta
-        created_at: Criado em
+        created_at: Data de Importação
       purchase:
         buyer_name: Nome do Comprador
         item_description: Descrição do Item
