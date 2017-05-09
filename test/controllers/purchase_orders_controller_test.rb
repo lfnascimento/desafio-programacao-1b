@@ -32,4 +32,12 @@ class PurchaseOrdersControllerTest < ActionController::TestCase
     assert_equal "Não foi possível importar o arquivo", flash.now[:error]
   end
 
+  test "should delete purchase_order" do
+    assert_difference('Purchase.count', -2) do
+      delete :destroy, id: purchase_orders(:one)
+    end
+    assert_redirected_to purchase_orders_path
+    assert_equal "Ordem de Compra excluída com sucesso", flash[:notice]
+  end
+
 end

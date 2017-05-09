@@ -22,6 +22,12 @@ class PurchaseOrdersController < ApplicationController
     end
   end
 
+  def destroy
+    purchase_order = PurchaseOrder.find(params[:id])
+    purchase_order.destroy
+    redirect_to purchase_orders_path, notice: t('.messages.success')
+  end
+
   private
 
   def purchase_order_params

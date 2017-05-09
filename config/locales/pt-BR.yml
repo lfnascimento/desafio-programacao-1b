@@ -234,8 +234,14 @@ pt-BR:
         index: Importações
         new: Criar/Importar
         show: Visualizar Detalhes
+        destroy: Excluir
+      confirmation:
+        destroy: Realmente deseja excluir?
   purchase_orders:
     create:
       messages:
         success: Ordem de Compra importada com sucesso
         fail: Não foi possível importar o arquivo
+    destroy:
+      messages:
+        success: Ordem de Compra excluída com sucesso

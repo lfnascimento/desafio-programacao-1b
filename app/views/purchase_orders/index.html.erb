@@ -14,6 +14,8 @@
       <td><%= number_to_currency(purchase_order.gross_revenue)%></td>
       <td><%= l purchase_order.created_at,  format: :short   %></td>
       <td><%= link_to t("views.purchase_orders.links.show"), purchase_order %></td>
+      <td><%= link_to t("views.purchase_orders.links.destroy"), purchase_order, method: :delete, 
+        data: { confirm: t('views.purchase_orders.confirmation.destroy') } %></td>
     </tr>
   <% end %>
 </table>

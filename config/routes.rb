@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :purchase_orders, except: [:destroy, :edit, :update]
+  resources :purchase_orders, except: [:edit, :update]
   root 'purchase_orders#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
