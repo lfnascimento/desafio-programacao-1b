@@ -30,6 +30,6 @@ class PurchaseOrdersController < ApplicationController
   private
 
   def purchase_order_params
-    params.require(:purchase_order).permit(:incoming_txt_file) if params[:purchase_order]
+    params.fetch(:purchase_order, {}).permit(:incoming_txt_file)
   end
 end
