@@ -1,11 +1,11 @@
 class PurchaseOrdersController < ApplicationController
  
   def index
-    @purchase_orders = PurchaseOrder.includes(:purchases).all
+    @purchase_orders = PurchaseOrder.eager.all
   end
 
   def show
-    @purchase_order = PurchaseOrder.includes(:purchases).find(params[:id])
+    @purchase_order = PurchaseOrder.eager.find(params[:id])
   end
 
   def new

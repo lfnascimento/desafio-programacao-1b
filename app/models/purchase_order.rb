@@ -3,6 +3,8 @@ class PurchaseOrder < ActiveRecord::Base
   validates :purchases, presence: true
   validates_associated :purchases
   include Parsable
+  
+  scope :eager, -> { includes(:purchases) }
 
   def incoming_txt_file=(uploaded_io)
     normalized_purchase_data = parser_txt(uploaded_io, txt_header_attributes)
