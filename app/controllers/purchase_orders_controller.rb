@@ -6,10 +6,12 @@ class PurchaseOrdersController < ApplicationController
 
   def show
     @purchase_order = PurchaseOrder.eager.find(params[:id])
+    breadcrumbs.add :'purchase_orders.show.title', purchase_order_path(@purchase_order)
   end
 
   def new
     @purchase_order = PurchaseOrder.new
+    breadcrumbs.add :'purchase_orders.new.title', new_purchase_order_path
   end
 
   def create

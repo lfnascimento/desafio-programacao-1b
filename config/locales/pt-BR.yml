@@ -224,10 +224,7 @@ pt-BR:
     application:
       title: Nebula
     purchase_orders:
-      index:
-        title: Ordens de Compra Importadas
       new:
-        title: Importação/Criação de Ordem de Compra
         buttons:
           import_file: Importar
       links:
@@ -238,6 +235,10 @@ pt-BR:
       confirmation:
         destroy: Realmente deseja excluir?
   purchase_orders:
+    index:
+      title: Ordens de Compra Importadas
+    new:
+      title: Importação/Criação de Ordem de Compra
     create:
       messages:
         success: Ordem de Compra importada com sucesso
@@ -245,3 +246,10 @@ pt-BR:
     destroy:
       messages:
         success: Ordem de Compra excluída com sucesso
+  breadcrumbs:
+    home: Início
+    purchase_orders:
+      new: 
+        title: Importação/Criação de Ordem de Compra
+      show: 
+        title: Visualização de Compra
