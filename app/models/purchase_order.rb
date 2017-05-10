@@ -5,8 +5,8 @@ class PurchaseOrder < ActiveRecord::Base
   include Parsable
 
   def incoming_txt_file=(uploaded_io)
-    purchases_normalized_data = parser_txt(uploaded_io, txt_header_attributes)
-    purchases.build(purchases_normalized_data)
+    normalized_purchase_data = parser_txt(uploaded_io, txt_header_attributes)
+    purchases.build(normalized_purchase_data)
   end
 
   def gross_revenue
