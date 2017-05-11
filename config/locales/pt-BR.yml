@@ -224,9 +224,6 @@ pt-BR:
     application:
       title: Nebula
     purchase_orders:
-      new:
-        buttons:
-          import_file: Importar
       links:
         index: Importações
         new: Criar/Importar
@@ -239,6 +236,8 @@ pt-BR:
       title: Ordens de Compra Importadas
     new:
       title: Importação/Criação de Ordem de Compra
+      buttons:
+        import_file: Importar
     create:
       messages:
         success: Ordem de Compra importada com sucesso

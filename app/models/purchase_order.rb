@@ -6,8 +6,9 @@ class PurchaseOrder < ActiveRecord::Base
   
   scope :eager, -> { includes(:purchases) }
 
-  def incoming_txt_file=(uploaded_io)
-    normalized_purchase_data = parser_txt(uploaded_io, txt_header_attributes)
+  def uploaded_txt_file=(incoming_file)
+    return if uploaded_io.content_type != 'text/plain'
+    normalized_purchase_data = parser_txt(incoming_file, txt_header_attributes)
     purchases.build(normalized_purchase_data)
   end
 

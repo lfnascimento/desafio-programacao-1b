@@ -1,4 +1,4 @@
 <%= form_for @purchase_order do |f| %>
-  <%= f.file_field :incoming_txt_file %>
-  <%= f.submit t('views.purchase_orders.new.buttons.import_file') %>
+  <%= f.file_field :uploaded_txt_file, accept: 'text/plain' %>
+  <%= f.submit t('purchase_orders.new.buttons.import_file') %>
 <% end %>
