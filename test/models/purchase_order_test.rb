@@ -13,14 +13,14 @@ class PurchaseOrderTest < ActiveSupport::TestCase
 
   test "should save with purchases from txt file" do
     assert_difference("Purchase.count", 4) do
-      @purchase_order.incoming_txt_file = fixture_file('dados.txt')
+      @purchase_order.uploaded_txt_file = fixture_file('dados.txt')
       @purchase_order.save
     end
   end
 
   test "shouldn't save with invalid purchases" do
     assert_no_difference("Purchase.count") do
-      @purchase_order.incoming_txt_file = fixture_file('dados_invalidos.txt')
+      @purchase_order.uploaded_txt_file = fixture_file('dados_invalidos.txt')
       @purchase_order.save
     end
   end

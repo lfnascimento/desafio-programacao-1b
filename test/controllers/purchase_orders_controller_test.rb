@@ -18,7 +18,7 @@ class PurchaseOrdersControllerTest < ActionController::TestCase
 
   test "should create purchase order with purchases itens" do
     assert_difference('Purchase.count', 4) do
-      post :create, purchase_order: { incoming_txt_file: fixture_file_upload('files/dados.txt')  }
+      post :create, purchase_order: { uploaded_txt_file: fixture_file_upload('files/dados.txt', 'text/plain') }
     end
     assert_redirected_to purchase_order_path(PurchaseOrder.last)
     assert_equal "Ordem de Compra importada com sucesso", flash[:notice]
@@ -26,7 +26,7 @@ class PurchaseOrdersControllerTest < ActionController::TestCase
 
   test "shouldn't create purchase order with invalid data" do
     assert_no_difference('PurchaseOrder.count') do
-      post :create, purchase_order: { incoming_txt_file: fixture_file_upload('files/dados_invalidos.txt')  }
+      post :create, purchase_order: { uploaded_txt_file: fixture_file_upload('files/dados_invalidos.txt', 'text/plain') }
     end
     assert_template 'new'
     assert_equal "Não foi possível importar o arquivo", flash.now[:error]

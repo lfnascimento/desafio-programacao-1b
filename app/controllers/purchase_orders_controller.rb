@@ -1,5 +1,6 @@
 class PurchaseOrdersController < ApplicationController
- 
+  before_action :set_purchase_order, only: [:new, :create]
+  
   def index
     @purchase_orders = PurchaseOrder.eager.all
   end
@@ -10,12 +11,12 @@ class PurchaseOrdersController < ApplicationController
   end
 
   def new
-    @purchase_order = PurchaseOrder.new
     breadcrumbs.add :'purchase_orders.new.title', new_purchase_order_path
   end
 
   def create
-    @purchase_order = PurchaseOrder.new(purchase_order_params)
+    incoming_file = purchase_order_params[:uploaded_txt_file]
+    @purchase_order.uploaded_txt_file = incoming_file if content_type_plain_text?(incoming_file)
     if @purchase_order.save
       redirect_to @purchase_order, notice: t('.messages.success')
     else
@@ -31,7 +32,16 @@ class PurchaseOrdersController < ApplicationController
 
   private
 
+  def set_purchase_order
+    @purchase_order = PurchaseOrder.new
+  end
+
   def purchase_order_params
-    params.fetch(:purchase_order, {}).permit(:incoming_txt_file)
+    params.fetch(:purchase_order, {}).permit(:uploaded_txt_file)
+  end
+
+  def content_type_plain_text?(incoming_file)
+    return unless incoming_file
+    incoming_file.content_type == 'text/plain'
   end
 end
