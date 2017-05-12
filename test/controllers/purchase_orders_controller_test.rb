@@ -39,5 +39,5 @@ class PurchaseOrdersControllerTest < ActionController::TestCase
     assert_redirected_to purchase_orders_path
     assert_equal "Ordem de Compra excluída com sucesso", flash[:notice]
   end
-
 end
+
